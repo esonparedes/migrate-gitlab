@@ -1,0 +1,20 @@
+name: Migrating Gitlab Pipelines
+
+on:
+  workflow_dispatch:
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    name: Migrate
+    steps:
+      - name: Install GitHub Actions Importer CLI
+        run: |
+          gh extension install github/gh-actions-importer
+      
+      - name: Verify extension is Installed
+        run: |
+          gh actions-importer -h
+
+
+
