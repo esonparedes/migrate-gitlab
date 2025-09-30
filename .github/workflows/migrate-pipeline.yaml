@@ -11,10 +11,14 @@ jobs:
       - name: Install GitHub Actions Importer CLI
         run: |
           gh extension install github/gh-actions-importer
+        env:
+          GH_TOKEN: ${{ github.token }}
       
       - name: Verify extension is Installed
         run: |
           gh actions-importer -h
+        env:
+          GH_TOKEN: ${{ github.token }}
 
 
 
